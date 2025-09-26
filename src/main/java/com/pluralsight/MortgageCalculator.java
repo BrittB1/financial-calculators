@@ -4,8 +4,24 @@ import java.util.Scanner;
 
 public class MortgageCalculator {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
-// define our scanner object since we need user import
+        System.out.println("Please pick a calculator to use:  \n 1. Mortgage Calculator \n  2. Future Value Calculator \n 3. Present Value");
+        System.out.print("Option: ");
+        int option = input.nextInt();
+
+        if (option == 1) {
+            mortgageCalculator();
+        } else if (option == 2) {
+            //futureValue();
+        } else if (option == 3) {
+            // presentValue();
+        }
+    }
+
+    public static void  mortgageCalculator(){
+
+        // define our scanner object since we need user import
         Scanner input = new Scanner(System.in);
 
         System.out.print("Enter Loan Amount: ");
@@ -33,6 +49,5 @@ public class MortgageCalculator {
         double totalInterest = (monthlyPayment* numberOfMonthlyPayments) - loanAmount;
 
         System.out.printf("Monthly Payment $%.2f, Total Interest: $%.2f", monthlyPayment, totalInterest);
-
     }
 }
